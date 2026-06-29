@@ -1,0 +1,77 @@
+﻿<Window x:Class="CompSciProjectFinal.SaleDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompSciProjectFinal"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Title="Sale Details" Height="440" Width="720" AllowsTransparency = "True" Background="Transparent">
+    <Grid>
+        <Border x:Name="Background" CornerRadius="11" Background="#00dddd"></Border>
+        <Border x:Name="Background2" CornerRadius="10" Background="Aqua" Margin="1" Opacity="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="bdrTitleBar" Grid.ColumnSpan="2" Background="Transparent" MouseDown="bdrTitleBar_MouseDown"/>
+                <StackPanel Orientation="Horizontal">
+                    
+                    <TextBlock x:Name="txbTitle" IsHitTestVisible="False" Text="Sale #gFhGFhgkxFDS" HorizontalAlignment="left" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0"></TextBlock>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,12,0">
+                    
+                    <Button x:Name="btnMinimise" Grid.Column="1" Content="—" FontSize="13" Height="30" Width="41" FontFamily="Amasis MT Pro Black" FontWeight="Bold" Click="btnMinimise_Click" Style="{StaticResource TopBarStandardButton}"/>
+                    
+                    <Button x:Name="btnClose" Grid.Column="1" Content="" FontSize="13" Height="30" Width="41" FontFamily="Marlett" Click="btnClose_Click" Style="{StaticResource TopBarCloseButton}"/>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Center" >
+                        <TextBlock Margin="0,3" Text="Sale ID:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Sale Time:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Seller:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Customer:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Sale Method:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Payment Link:" FontSize="16" Height="30"/>
+                        <TextBlock Margin="0,3" Text="Status:" FontSize="16" Height="30"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock x:Name="txbSaleId" Margin="0,3" Text="#249284243234" FontSize="16" Height="30"/>
+                        <TextBlock x:Name="txbSaleTime" Margin="0,3" Text="12/03/1997 21:34" FontSize="16" Height="30"/>
+                        <TextBlock x:Name="txbSeller" Margin="0,3" Text="May Praebibo III" FontSize="16" Height="30"/>
+                        <Button x:Name="btnCustomer" Margin="0,3" Content="Rain" FontSize="16" Height="30" Width="150" Style="{StaticResource SalesButton}" Click="btnCustomer_Click"/>
+                        <TextBlock x:Name="txbSaleMethod" Margin="0,3" Text="Online Order" FontSize="16" Height="30"/>
+                        <TextBox x:Name="txtPaymentLink" Margin="0,3" Height="30" Width="150" FontSize="16" Style="{StaticResource TextBoxStyle1}" TextChanged="txtPaymentLink_TextChanged"/>
+                        <Border x:Name="bdrStatusBg" Margin="0,3" Height="30" Width="150" Background="Coral" CornerRadius="10">
+                            <TextBlock x:Name="txbSale"  Text="Unconfirmed" Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnAdvance" Width="150" Height="30" Content="Confirm Sale" Style="{StaticResource SalesButton}" FontSize="16" Grid.Row="1" VerticalAlignment="Center" Margin="3,0" Click="btnAdvance_Click"/>
+                    <Button x:Name="btnAdd" Width="150" Height="30" Content="Add New Product" Style="{StaticResource SalesButton}" FontSize="16" Grid.Row="1" VerticalAlignment="Center" Margin="3,0" Click="btnAdd_Click"/>
+                    <Button x:Name="btnSaveInvoice" Width="150" Height="30" Content="Save Invoice" Style="{StaticResource SalesButton}" FontSize="16" Grid.Row="1" VerticalAlignment="Center" Margin="3,0" Click="btnSaveInvoice_Click"/>
+                </StackPanel>
+                
+                <ScrollViewer Grid.Column="2" Grid.Row="1">
+                    <StackPanel x:Name="stpItems"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

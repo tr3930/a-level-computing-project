@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="CompSciProjectFinal.ProductTransUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompSciProjectFinal"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="100" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White"  CornerRadius="10" Grid.RowSpan="2"/>
+        
+        <Border HorizontalAlignment="Left" Width="150" Height="100" Grid.RowSpan="2" CornerRadius="10,0,0,10">
+            <Border.Background>
+                <ImageBrush ImageSource="{Binding PictureLocation}" Stretch="UniformToFill" Opacity="0.9"/>
+            </Border.Background>
+            <Border.OpacityMask>
+                <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.9,0">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0" Color="Black"/>
+                        <GradientStop Offset="1" Color="Transparent"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+        </Border>
+        <TextBlock x:Name="txbName" Text="NAME" FontSize="25" Margin="10, 10"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Name="btnM10" Height="30" Grid.Row="2" Width="40" Content="-10" FontSize="16" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" Style="{StaticResource StandardButton}" Click="btnM10_Click" ></Button>
+            <Button Name="btnM1" Height="30" Grid.Row="2" Width="40" Content="-1" FontSize="16" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" Style="{StaticResource StandardButton}" Click="btnM1_Click" ></Button>
+            <Border Background="#f6a15e" Width="35" Height="30" CornerRadius="10">
+                <TextBlock x:Name="txbAmount" Text="500" FontSize="16" Grid.Column="1" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+            </Border>
+            
+            <Button Name="btnP1" Height="30" Grid.Row="2" Width="40" Content="+1" FontSize="16" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" Style="{StaticResource StandardButton}" Click="btnP1_Click" ></Button>
+            <Button Name="btnP10" Height="30" Grid.Row="2" Width="40" Content="+10" FontSize="16" HorizontalAlignment="Center" Margin="2" VerticalAlignment="Center" Style="{StaticResource StandardButton}" Click="btnP10_Click" ></Button>
+        </StackPanel>
+        <TextBlock x:Name="txbCost" Text="£2.50"  FontSize="16" Grid.Row="1" HorizontalAlignment="Left" Margin="10"/>
+        <Border Background="Transparent" BorderBrush="#f6a15e" BorderThickness="2"  CornerRadius="10" Grid.RowSpan="2" IsHitTestVisible="False"/>
+    </Grid>
+</UserControl>

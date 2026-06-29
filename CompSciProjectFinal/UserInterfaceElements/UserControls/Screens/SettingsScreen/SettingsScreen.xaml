@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="CompSciProjectFinal.SettingsScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompSciProjectFinal"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="453" d:DesignWidth="642">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Account Settings:" Grid.ColumnSpan="2" FontSize="20"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+                <Button x:Name="btnChangeId" Width="130" Height="30" FontSize="16" Content="Change" Style="{StaticResource StandardButton}" Click="btnChangeId_Click"  Margin="4"/>
+                <Button x:Name="btnChangeName" Width="130" Height="30" FontSize="16" Content="Change" Style="{StaticResource StandardButton}" Click="btnChangeName_Click" Margin="4"/>
+                <Button x:Name="btnChangePin" Width="130" Height="30" FontSize="16" Content="Change" Style="{StaticResource StandardButton}" Click="btnChangePin_Click" Margin="4"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <TextBlock x:Name="txbUsername" FontSize="16" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Username: toast" Margin="4"/>
+                <TextBlock x:Name="txbDisplayName" FontSize="16" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Name: Ice Cube" Margin="4"/>
+                <TextBlock x:Name="txbPin" FontSize="16" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="PIN: ⚬ ⚬ ⚬ ⚬" Margin="4"/>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Sessions:" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20"/>
+            <StackPanel Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">
+                <TextBlock x:Name="txbCurrentSesison" FontSize="16" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Current Session: 322425245132" Margin="3"/>
+                <TextBlock x:Name="txbLoginTime" FontSize="16" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Login Time: 23/01/1976 23:43" Margin="3"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
+                <Button x:Name="btnViewEvents" Width="130" Height="30" FontSize="16" Content="View Events" Style="{StaticResource StandardButton}" Click="btnViewEvents_Click" Margin="4"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="btnPastSessions" Width="150" Height="30" FontSize="16" Content="View Past Sessions" Style="{StaticResource StandardButton}" Grid.Row="1" Click="btnPastSessions_Click"/>
+    </Grid>
+</UserControl>

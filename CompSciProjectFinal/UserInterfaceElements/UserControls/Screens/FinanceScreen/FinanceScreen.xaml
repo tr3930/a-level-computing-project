@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="CompSciProjectFinal.FinanceScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompSciProjectFinal"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="453" d:DesignWidth="642">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="165"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Width="0" Height="0" x:Name="lbxItems"/>
+            <ScrollViewer x:Name="scvItems" Margin="10,0,5,0">
+                <StackPanel x:Name="stpItems">
+
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Column="1">
+                <Button x:Name="btnOutgoing" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="Add Outgoing" Style="{StaticResource StandardButton}" Margin="0,5,5,2" Click="btnOutgoing_Click"/>
+                <Button x:Name="btnIncoming" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="Add Incoming" Style="{StaticResource StandardButton}" Margin="0,5,5,2" Click="btnIncoming_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            </Grid>
+    </Grid>
+</UserControl>

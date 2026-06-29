@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="CompSciProjectFinal.SalesScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompSciProjectFinal"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="453" d:DesignWidth="642">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="rdbUnconfirmed"  Style="{StaticResource SidebarSales}" Content="Unconfirmed" Height="30" Width="150" Margin="3,0" FontSize="16" IsChecked="true" Checked="rdbUnconfirmed_Checked"/>
+            <RadioButton x:Name="rdbAwaitPay"  Style="{StaticResource SidebarSales}" Content="Awaiting Payment" Height="30" Width="150" Margin="3,0" FontSize="16" Checked="rdbAwaitPay_Checked"/>
+            <RadioButton x:Name="rdbAwaitShip"  Style="{StaticResource SidebarSales}" Content="Awaiting Shipping" Height="30" Width="150" Margin="3,0" FontSize="16" Checked="rdbAwaitShip_Checked"/>
+            <RadioButton x:Name="rdbComplete" Style="{StaticResource SidebarSales}" Content="Complete" Height="30" Width="150" Margin="3,0" FontSize="16" Checked="rdbComplete_Checked"/>
+        </StackPanel>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="165"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Width="0" Height="0" x:Name="lbxItems"/>
+            <ScrollViewer x:Name="scvItems" Margin="10,0,5,0">
+                <StackPanel x:Name="stpItems">
+
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Column="1">
+                <Button x:Name="btnNewSale" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="New Sale" Style="{StaticResource StandardButton}" Click="btnNewSale_Click" Margin="0,5,5,2"/>
+                <Button x:Name="btnCheckout" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="Start Checkout" Style="{StaticResource StandardButton}" Click="btnCheckout_Click" Margin="0,5,5,2"/>
+                <Button x:Name="btnNewCustomer" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="New Customer" Style="{StaticResource StandardButton}" Click="btnNewCustomer_Click" Margin="0,5,5,2"/>
+                <Button x:Name="btnManageCustomers" BorderBrush="Azure"  Width="150" Height="30" FontSize="16" Content="Manage Customers" Style="{StaticResource StandardButton}" Click="btnManageCustomers_Click" Margin="0,5,5,2"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+
+</UserControl>

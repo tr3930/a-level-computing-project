@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="CompSciProjectFinal.AdminScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CompSciProjectFinal"
+             mc:Ignorable="d" 
+             d:DesignHeight="453" d:DesignWidth="642">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="20" Text="Admin Functions:" Margin="0,0,0,8"/>
+            <Button x:Name="btnSessions"  FontSize="16" Content="Useage Analytics" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnSessions_Click" Margin="0,5,0,2"/>
+            <Button x:Name="btnLoginAsUser"  FontSize="16" Content="Login as User" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnLoginAsUser_Click" Margin="0,5,0,2"/>
+            <Button x:Name="btnNewUser"  FontSize="16" Content="New User" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnNewUser_Click" Margin="0,5,0,2"/>
+            <Button x:Name="btnViewDB"  FontSize="16" Content="View Database" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnViewDB_Click" Margin="0,5,0,2"/>
+            <Button x:Name="btnEmailMessages"  FontSize="16" Content="Email Messages" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnEmailMessages_Click" Margin="0,5,0,2"/>
+            <Button x:Name="btnEmailSettings"  FontSize="16" Content="Email Settings" Height="30" Width="150" Style="{StaticResource StandardButton}" Click="btnEmailSettings_Click" Margin="0,5,0,2"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

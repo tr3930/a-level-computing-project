@@ -1,0 +1,76 @@
+﻿<Window x:Class="CompSciProjectFinal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompSciProjectFinal"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Loaded="WindowLoaded"
+        WindowStartupLocation="CenterScreen"
+        Title="Your Overview" Height="560" Width="800" AllowsTransparency = "True" Background="Transparent">
+    <Grid>
+        <Border x:Name="Background" CornerRadius="11" Background="#00dddd"></Border>
+        <Border x:Name="Background2" CornerRadius="10" Background="Aqua" Margin="1" Opacity="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="bdrTitleBar" Grid.ColumnSpan="2" Background="Transparent" MouseDown="bdrTitleBar_MouseDown"/>
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock x:Name="txbTitleBar" IsHitTestVisible="False" Text="Store Management" HorizontalAlignment="left" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0" Grid.ColumnSpan="2"></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,12,0">
+                    
+                    <Button x:Name="btnMinimise" Grid.Column="1" Content="—" FontSize="13" Height="30" Width="41" FontFamily="Amasis MT Pro Black" FontWeight="Bold" Click="btnMinimise_Click" Style="{StaticResource TopBarStandardButton}"/>
+
+                    <Button x:Name="btnClose" Grid.Column="1" Content="" FontSize="13" Height="30" Width="41" FontFamily="Marlett" Click="btnClose_Click" Style="{StaticResource TopBarCloseButton}"/>
+                </StackPanel>
+                <Border x:Name="bdrTitleBackground" Background="Coral" Grid.Row="1" Grid.Column="1" Width="320" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" CornerRadius="10" Margin="10,0,0,0">
+                    <TextBlock x:Name="txbTitleText" Foreground="White" Text="Overview" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                </Border>
+                <TextBlock x:Name="txbName"  Grid.Row="1" Grid.Column="1" Text="Logged in as: NAMENAMENAME" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+                <TabControl x:Name="tabSwitcher" Grid.Row="2" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:OverviewScreen x:Name="OverviewScreen" Grid.Row="1"/>
+                    </TabItem>
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:StockScreen x:Name="StockScreen"/>
+                    </TabItem>
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:SalesScreen x:Name="SalesScreen"/>
+                    </TabItem>
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:SettingsScreen x:Name="SettingsScreen"/>
+                    </TabItem>
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:FinanceScreen x:Name="FinanceScreen"/>
+                    </TabItem>
+                    <TabItem Width="0" Height="0" Visibility="Hidden">
+                        <local:AdminScreen x:Name="AdminScreen"/>
+                    </TabItem>
+                </TabControl>
+                
+
+
+                <StackPanel x:Name="stpSidebar" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <RadioButton Name="btnOverview" Height="30" Margin="0,2" Width="120" Content="Overview" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" Style="{StaticResource SidebarOverview}" Checked="btnOverview_Click" ></RadioButton>
+                    <RadioButton Name="btnStock" Height="30" Margin="0,2" Width="120" Content="Stock"  FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SidebarStock}" Checked="btnStock_Click" ></RadioButton>
+                    <RadioButton Name="btnSales" Height="30" Margin="0,2" Width="120" Content="Sales" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SidebarSales}" Checked="btnSales_Click" ></RadioButton>
+                    <RadioButton Name="btnFinance" Height="30" Margin="0,2" Width="120" Content="Finance" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SidebarFinance}" Checked="btnFinance_Checked"></RadioButton>
+                    <RadioButton Name="btnSettings" Height="30" Margin="0,2" Width="120" Content="Account" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SidebarSettings}" Checked="btnSettings_Click" ></RadioButton>
+                    <RadioButton Name="btnAdmin" Height="30" Margin="0,2" Width="120" Content="Admin" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource SidebarAdmin}" Checked="btnAdmin_Click" ></RadioButton>
+                    <Button Name="btnRecheckEmail" Height="30" Margin="0,2" Width="120" Content="Verify Config" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" Style="{StaticResource StandardButton}" Click="btnRecheckEmail_Click" ></Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

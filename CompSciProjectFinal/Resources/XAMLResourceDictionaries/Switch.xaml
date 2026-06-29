@@ -1,0 +1,82 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type CheckBox}" x:Key="StockSwitch">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="White" CornerRadius="10" Margin="2,2,2,2" Width="50" Height="30" VerticalAlignment="Center">
+                                    <Border CornerRadius="8" HorizontalAlignment="Left" Margin="2" Width="25" Background="#5d25be"/>
+                                </Border>
+                            </StackPanel>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Background="White" CornerRadius="10" Margin="2,2,2,2" Width="50" Height="30">
+                                        <Border CornerRadius="8" HorizontalAlignment="Right" Margin="2" Width="25" Background="#5d25be"/>
+                                    </Border>
+                                </StackPanel>
+                                
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="{x:Type CheckBox}" x:Key="StandardSwitch">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="White" CornerRadius="10" Margin="2,2,2,2" Width="50" Height="30" VerticalAlignment="Center">
+                                    <Border CornerRadius="8" HorizontalAlignment="Left" Margin="2" Width="25" Background="#33eeff"/>
+                                </Border>
+                            </StackPanel>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Background="White" CornerRadius="10" Margin="2,2,2,2" Width="50" Height="30">
+                                        <Border CornerRadius="8" HorizontalAlignment="Right" Margin="2" Width="25" Background="#33eeff"/>
+                                    </Border>
+                                </StackPanel>
+
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
